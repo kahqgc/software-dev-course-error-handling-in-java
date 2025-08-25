@@ -41,7 +41,8 @@ public class ExerciseTests {
     @Test
     public void testSafeDivideWithCustomException() {
         try {
-            var result = Main.safeDivideWithCustomException(4.0, 0.0);
+            String msg = "Attempted to divide by zero";
+            var result = Main.safeDivideWithCustomException(4.0, 0.0, msg);
             Assertions.fail("safeDivideWithCustomException should throw a CustomDivideByZeroException: " + result);
         } catch (org.example.CustomDivideByZeroException e) {
             assertEquals(4.0, e.getA());
